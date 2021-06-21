@@ -1,0 +1,159 @@
+body {
+    margin: 0px;
+    font-family: 'Merriweather', serif;
+    text-align: center;
+}
+
+h1 {
+    margin: 50px auto 0px auto;
+    font-family: 'Sacramento', cursive;
+    font-size: 5.625rem;
+    color: #66bfbf;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #66bfbf;
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+hr {
+    
+    border-style: none;
+    border-top-style: dotted ;
+    border-color: grey;
+    border-width: 5px ;
+    width: 5%;
+    margin-bottom: 100px ;
+    margin-top: 100px;
+}
+
+p{
+    line-height: 2;
+}
+
+a{
+    margin: 10px 20px;
+}
+
+a:hover{
+    color : #eaf6f6;
+}
+
+:is(h3,a){
+    color : #11999e;
+    margin-bottom: 50px;
+}
+
+.top-container {
+   /* background-color:#c19277 ; */ 
+    background-color: #eaf6f6;
+    padding-top: 100px;
+    position: relative;
+    text-align: center;   
+    
+}
+.top-cloud {
+    position: absolute;
+    right: 300px;
+    top:50px;
+
+}
+.bot-cloud {
+    position: absolute;
+    bottom: 300px;
+    left: 300px;
+}
+.middle-container {
+    /*background-color: #62959c; */
+    margin: 100px 0;
+}
+.bottom-container{
+    background-color: #66BFBF;
+    position: relative;
+    padding-bottom: 10px;
+    padding-top: 30px;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-link{
+    color: #11999E;
+    line-height : 30px;
+    word-spacing: 20px;
+    text-decoration: none;
+}
+.copyright{
+    color: #EAF6F6;
+    font-size: 0.75rem;
+    padding: 10px 0;
+}
+
+.skills {
+  /*  background-color:#e1bc91; */
+}
+
+.web {
+    
+    text-decoration: underline;
+}
+
+.skill-row {
+    width: 50%;
+    margin: 100px auto 100px auto;
+    text-align: left;
+    line-height: normal;
+
+}
+:is(.skill-1,.skill-2){
+    width: 25%;   
+}
+
+.skill-1{
+    float: left;
+    margin-right: 30px;
+    
+}
+
+.skill-2{
+    float: right;
+    margin-left: 30px;
+}
+
+.foto-baskoro{
+    width: 20%;  
+}
+
+#desc-baskoro{
+    color: #40514E;
+    width: 40%;
+    margin: 10px auto 100px auto;    
+
+}
+
+#web{
+    font-weight: normal;
+}
+
+.btn {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 15px;
+    background-color: #66BFBF;
+    border: solid #66BFBF 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+ }

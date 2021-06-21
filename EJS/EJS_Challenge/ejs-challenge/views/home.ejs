@@ -1,0 +1,12 @@
+<%-include("partials/header"); -%>
+<h1> Home </h1>
+<p><%= homeStart %> </p>
+<% postings.forEach(function(element){ %>
+    <h1><%= element.judulCerita %></h1>
+    <p><%= element.isiCerita.substring(0,100) +"..." %><a href="/posts/<%= element.judulCerita %> >"> <%= element.infoLink %></a></p>
+<% }); %>   
+ <!--buat nampilin judul blog ke dalam link routingnya, bisa langsung
+     ngambil dari judulnya, dan si ejsnya bakal langsung mroses biar bisa dipake -->
+     
+ 
+<%-include("partials/footer"); -%>

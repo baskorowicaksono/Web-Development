@@ -1,0 +1,2 @@
+Making a mockup blog website, using Bootstrap, EJS and NodeJS (using ExpressJS).
+There's no database implemented yet in this project, so everytime the server is off, the data inside will be reset to default.

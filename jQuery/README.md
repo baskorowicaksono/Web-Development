@@ -1,0 +1,1 @@
+Practicing using jQuery, a framework used to workaround DOM

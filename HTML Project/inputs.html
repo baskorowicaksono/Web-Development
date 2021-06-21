@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Inputs of HTML</title>
+</head>
+<body>
+    <form action="inputs.html" method="POST">
+        <label>First Name :</label>
+        <input type="text" name="" id="" value="Ben">
+        <br><br>
+        <label>Last Name :</label>
+        <input type="text" name="" id="" value="Sueb">
+        <br><br>
+        <label for="Tanggal Lahir">Masukkan Tanggal Lahir Anda</label>
+        <input type="date" name="" id="Tanggal Lahir" max='2003-01-12'>
+        <br><br>
+        <label>Email Address :</label>
+        <input type="email" name="" id="">
+        <br><br>
+        <label for="pass">Password :</label>
+        <input type="password" name="pass" id="pass">
+        <br><br>
+        <input type="submit" name="" id="" value="Send">
+        <input type="reset" name="" id="">
+
+        <p>Gender :</p>
+        <input type="radio" name="Gender" id="male" value="male">
+            <label for="male">Male</label><br>
+        <input type="radio" name="Gender" id="female" value="female">
+            <label for="female">Female</label><br>
+        <input type="radio" name="Gender" id="other" value="other">
+            <label for="other">Other</label><br>
+
+        <br>
+        <p>Apakah Anda Mempunyai Kendaraan?</p>
+        <input type="radio" name="" id="Ya">
+            <label for="Ya">Ya</label><br>
+        <input type="radio" name="" id="Tidak">
+            <label for="Tidak">Tidak</label><br><br>
+        
+        <p>Jika Iya, Mohon deskripsikan kendaraan yang Anda punya</p>
+        <input type="checkbox" name="Vehicles" id="Motor">
+            <label for="Motor">Saya Punya Motor</label><br>
+        <input type="checkbox" name="Vehicles" id="Mobil">
+            <label for="Mobil">Saya Punya Mobil</label><br>
+        <input type="checkbox" name="Vehicles" id="Sepeda">
+            <label for="Sepeda">Saya Punya Sepeda</label><br>
+        </form>
+
+        <br>
+        <label for="Foto">Mohon Unggah Foto Anda :</label>
+        <input type="file" name="" id="Foto">
+        <br><br>
+
+        <label for="Jumlah Motor">Masukkan jumlah motor yang Anda sekarang miliki!</label>
+        <input type="number" name="" id="Jumlah Motor" min="0">
+        <br><br>
+        <input type="button" onclick="alert('Bakekok')" name="" id="" value="Pencet Kalo Penasaran">
+</body>
+</html>
