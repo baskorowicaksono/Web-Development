@@ -4,6 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
 const mongoose = require("mongoose");
+const _ = require("lodash");
 
 const app = express();
 
@@ -86,6 +87,7 @@ Item.find({}, function(err,results){
 app.post("/", function(req, res){
 
   const itemName = req.body.newItem;
+  const listName = req.body.list;
 
   // if (req.body.list === "Work") {
   //   workItems.push(item);
@@ -98,7 +100,19 @@ app.post("/", function(req, res){
   const newItem = new Item({
     name : itemName
   });
-  newItem.save();
+  
+
+  if(listName === "Today"){
+    newItem.save();
+    res.redirect("/");
+  }
+  else{
+    List.findOne({name : listName}, function(err, foundList){
+      foundList.items.push(newItem);
+      foundList.save();
+      res.redirect("/" + listName);
+    });
+  }
 });
 
 app.get("/work", function(req,res){
@@ -111,19 +125,31 @@ app.get("/about", function(req, res){
 
 app.post("/delete", function(req, res){
   const idToRemove = req.body.checkbox;
-  Item.findByIdAndDelete(idToRemove, function(err){
-    if(err){
-      console.log(err);
-    }
-    else{
-      console.log("\nSuccessfully deleted the item");
-      res.redirect("/");
-    }
-  });
+  const listName = req.body.listName;
+
+  if(listName === "Today"){
+    Item.findByIdAndDelete(idToRemove, function(err){
+      if(err){
+        console.log(err);
+      }
+      else{
+        console.log("\nSuccessfully deleted the item");
+        res.redirect("/");
+      }
+    });
+  }
+  else{
+    List.findOneAndUpdate({name : listName}, {$pull : {items : {_id : idToRemove}}}, function(err, foundList){
+      if(!err){
+        console.log("\nSuccessfully deleted an item from " + listName);
+        res.redirect("/" + listName);
+      }
+    });
+  }
 });
 
 app.get("/:customName", function(req,res){
-  const customName = req.params.customName;
+  const customName = _.capitalize(req.params.customName);
  
 
   List.findOne({name : customName}, function(err, foundList){
@@ -141,8 +167,7 @@ app.get("/:customName", function(req,res){
           name : customName,
           items : defaultItems
         });
-        list.save();
-        res.redirect('/:' + customName);
+        list.save(() => res.redirect('/' + customName));
       }
     }
   });
