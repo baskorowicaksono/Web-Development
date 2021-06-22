@@ -17,7 +17,7 @@ app.use(express.static("public"));
 const workItems = [];
 
 //database connection using mongoDB
-mongoose.connect("mongodb+srv://admin-baskoro:chucknorris01@cluster0.nbkkl.mongodb.net/todolistDB", {useNewUrlParser : true});
+mongoose.connect("mongodb+srv://admin-baskoro:<password>@cluster0.nbkkl.mongodb.net/todolistDB", {useNewUrlParser : true});
 
 //schema and model init of the database
 const itemsSchema = {
