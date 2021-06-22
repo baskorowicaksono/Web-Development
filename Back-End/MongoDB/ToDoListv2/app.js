@@ -17,7 +17,7 @@ app.use(express.static("public"));
 const workItems = [];
 
 //database connection using mongoDB
-mongoose.connect("mongodb://localhost:27017/todolistDB", {useNewUrlParser : true});
+mongoose.connect("mongodb+srv://admin-baskoro:chucknorris01@cluster0.nbkkl.mongodb.net/todolistDB", {useNewUrlParser : true});
 
 //schema and model init of the database
 const itemsSchema = {
@@ -173,6 +173,6 @@ app.get("/:customName", function(req,res){
   });
 });
 
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
+app.listen(process.env.PORT || 3000, function() {
+  console.log("Server started Successfully");
 });
