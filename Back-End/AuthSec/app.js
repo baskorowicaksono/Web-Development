@@ -41,7 +41,8 @@ const userSchema = new mongoose.Schema({
     email : String,
     password : String,
     googleId : String,
-    facebookId : String
+    facebookId : String,
+    secret     : String
 });
 
 userSchema.plugin(passportLocalMongoose);   //using passport as plugin on Mongoose
@@ -138,7 +139,16 @@ app.post("/register", function(req, res){
 
 app.get("/secrets", function(req, res){
     if(req.isAuthenticated()){
-        res.render("secrets");
+        User.find({"secret" : {$ne:null}}, function(err, foundUsers){
+            if(err){
+                console.log(err);
+            }
+            else{
+                if(foundUsers){
+                    res.render("secrets", {usersWithSecrets : foundUsers});
+                }
+            }
+        });
     }
     else{
         res.redirect("/login");
@@ -220,6 +230,43 @@ app.get("/auth/facebook/secrets",
     });
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+app.get("/submit", function(req, res){
+    if(req.isAuthenticated()){
+        res.render("submit");
+    }
+    else{
+        res.redirect("/login");
+    }
+});
+
+app.post("/submit", function(req, res){
+    const newSecret = req.body.secret;
+    console.log(req.user);
+    User.findById(req.user._id, function(err, foundUser){
+        if(err){
+            console.log(err);
+        }
+        else{
+            if(foundUser){
+                foundUser.secret = newSecret;
+                foundUser.save(function(err){
+                    if(err){
+                        console.log(err);
+                    }
+                    else{
+                        console.log("Successfully saved a new secret");
+                        res.redirect("/secrets");
+                    }
+                })
+            }
+            else{
+                console.log("User not Found");
+            }
+        }
+    })
+})
+
 app.listen(3000, function(){
     console.log("Server started on port 3000");
 })
