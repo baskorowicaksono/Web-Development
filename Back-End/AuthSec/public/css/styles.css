@@ -14,3 +14,7 @@ body {
   color: #fff;
   background-color: #000;
 }
+
+.oauth {
+  margin: 20px 0;
+}
