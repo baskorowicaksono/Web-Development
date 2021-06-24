@@ -6,9 +6,11 @@ const express = require("express");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 // const encrypt = require("mongoose-encryption");
-const md5 = require("md5");
+// const md5 = require("md5");
+const bcrypt = require("bcrypt");
 
 const app = express();
+const saltRounds = 10;
 
 mongoose.connect("mongodb://localhost:27017/userDB", {useNewUrlParser : true});
 
@@ -39,20 +41,22 @@ app.get("/register", function(req, res){
 app.post("/register", function(req, res){
     const userName = req.body.username;
     const userPass = req.body.password;
-    
-    const newUser = new User({
-        email : userName,
-        password : md5(userPass)
-    });
-    newUser.save(function(err){
-        if(err){
-            console.log(err);
-        }
-        else{
-            res.render("secrets");
-        }
-    })
-})
+
+    bcrypt.hash(userPass, saltRounds, function(err, hash){
+        const newUser = new User({
+            email : userName,
+            password : hash
+        });
+        newUser.save(function(err){
+            if(err){
+                console.log(err);
+            }
+            else{
+                res.render("secrets");
+            }
+        });
+    }); 
+});
 
 app.get("/login", function(req, res){
     res.render("login");
@@ -68,19 +72,21 @@ app.post("/login", function(req, res){
         }
         else{
             if(result){
-                if(result.password === md5(userPass)){
-                    res.render("secrets");
-                }
-                else{
-                    res.send("Login Failed, Refresh and check your credentials");
-                }
+                bcrypt.compare(userPass, result.password, function(err, found){
+                    if(found === true){
+                        res.render("secrets");
+                    }
+                    else{
+                        res.send("Login Failed, wrong password");
+                    }
+                }); 
             }
             else{
                 res.send("Account not found, please try again");
             }
         }
-    })
-})
+    });
+});
 
 app.listen(3000, function(){
     console.log("Server started on port 3000");
