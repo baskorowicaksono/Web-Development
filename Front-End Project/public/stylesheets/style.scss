@@ -244,17 +244,119 @@ html, body{
     }
 }
 
-// #desc-4{
-//     position: absolute;
-// }
+#testimony{
+    position: absolute;
+    top: 2700px;
+    z-index: 1;
+    img{
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-left: 130px;
+        margin-bottom: 30px;
+    }
+    h3{
+        position: absolute;
+        font-family: $fraunces;
+        font-weight: 700;
+        color: hsl(210, 4%, 67%);
+        letter-spacing: 6px;
+        // text-align: center;
+        top: 25px;
+        width: 500px;
+        left: 560px;
+    }
+    #customer-all{
+        position: absolute;
+        top: 150px;
+        .customer{
+            position: absolute;
+            p{
+                top: 15px;
+                width: 350px;
+                text-align: center;
+                font-family: $barlow;
+                font-weight: 600;
+                line-height: 1.6;
+                color: hsl(232, 10%, 55%);
+            }
+            p.customer-name{
+                @extend p;
+                font-family: $fraunces;
+                font-weight: 900;
+                font-size: 20px;
+                color: hsl(212, 27%, 19%);
+                margin-bottom: -10px;
+            }
 
-// #testimony{
-//     position: absolute;
-// }
+            p.customer-position{
+                @extend p;
+                font-weight: 400;
+                // font-size: 15px;
+                color: hsl(210, 4%, 67%);
+            }
+        }
+        #customer-1{
+            position: inherit;
+            left: 150px;
+        }
+        #customer-2{
+            position: inherit;
+            left: 560px;
+        }
+        #customer-3{
+            position: inherit;
+            left: 970px;
+        }
+    }
+}
 
-// footer{
-//     position: absolute;
-// }
+#pictures{
+    img{
+        position: absolute;
+        top: 3330px;
+        width: 360px;
+    }
+    #pic-2{
+        @extend img;
+        left: 360px;
+    }
+    #pic-3{
+        @extend img;
+        left: 720px;
+    }
+    #pic-4{
+        @extend img;
+        left: 1080px;
+    }
+}
+
+footer{
+    position: absolute;
+    top: 3776px;
+    width: 1440px;
+    text-align: center;
+    // background-color:hsl(168, 34%, 41%);
+
+    h2{
+        font-family: $barlow;
+        font-weight: 900;
+        color: hsl(168, 34%, 41%);
+    }
+    a{
+        color: hsl(168, 34%, 41%);
+        font-family: $barlow;
+        font-weight: 600;
+        margin-right: 25px;
+        margin-left: 25px;
+        &:hover{
+            color: #fff;
+        }
+        svg:hover{
+            fill: white;
+        }
+    }
+}
 
 
     

@@ -75,7 +75,7 @@ html a, body a {
   color: white;
 }
 
-#landing img {
+#landing img, #landing #pictures #pic-2, #pictures #landing #pic-2, #landing #pictures #pic-3, #pictures #landing #pic-3, #landing #pictures #pic-4, #pictures #landing #pic-4 {
   z-index: 0;
   width: 1440px;
   height: 800px;
@@ -110,7 +110,7 @@ html a, body a {
   padding-left: 60px;
 }
 
-#desc-1 #text-left p {
+#desc-1 #text-left p, #desc-1 #text-left #testimony #customer-all .customer p.customer-name, #testimony #customer-all .customer #desc-1 #text-left p.customer-name, #desc-1 #text-left #testimony #customer-all .customer p.customer-position, #testimony #customer-all .customer #desc-1 #text-left p.customer-position {
   font-family: "Barlow", sans-serif;
   font-weight: 600;
   color: #818498;
@@ -127,7 +127,7 @@ html a, body a {
   padding-left: 60px;
 }
 
-#desc-1 img {
+#desc-1 img, #desc-1 #pictures #pic-2, #pictures #desc-1 #pic-2, #desc-1 #pictures #pic-3, #pictures #desc-1 #pic-3, #desc-1 #pictures #pic-4, #pictures #desc-1 #pic-4 {
   overflow: hidden;
   position: absolute;
   top: 200px;
@@ -159,7 +159,7 @@ html a, body a {
   padding-left: 60px;
 }
 
-#desc-2 #text-right p {
+#desc-2 #text-right p, #desc-2 #text-right #testimony #customer-all .customer p.customer-name, #testimony #customer-all .customer #desc-2 #text-right p.customer-name, #desc-2 #text-right #testimony #customer-all .customer p.customer-position, #testimony #customer-all .customer #desc-2 #text-right p.customer-position {
   font-family: "Barlow", sans-serif;
   font-weight: 600;
   color: #818498;
@@ -176,7 +176,7 @@ html a, body a {
   padding-left: 60px;
 }
 
-#desc-2 img {
+#desc-2 img, #desc-2 #pictures #pic-2, #pictures #desc-2 #pic-2, #desc-2 #pictures #pic-3, #pictures #desc-2 #pic-3, #desc-2 #pictures #pic-4, #pictures #desc-2 #pic-4 {
   overflow: hidden;
   position: absolute;
   top: 200px;
@@ -210,7 +210,7 @@ html a, body a {
   color: #25564b;
 }
 
-#desc-3 .desc-ext #desc-ext-1 img {
+#desc-3 .desc-ext #desc-ext-1 img, #desc-3 .desc-ext #desc-ext-1 #pictures #pic-2, #pictures #desc-3 .desc-ext #desc-ext-1 #pic-2, #desc-3 .desc-ext #desc-ext-1 #pictures #pic-3, #pictures #desc-3 .desc-ext #desc-ext-1 #pic-3, #desc-3 .desc-ext #desc-ext-1 #pictures #pic-4, #pictures #desc-3 .desc-ext #desc-ext-1 #pic-4 {
   position: absolute;
   width: 720px;
   height: 600px;
@@ -239,11 +239,130 @@ html a, body a {
   color: #19536b;
 }
 
-#desc-3 .desc-ext #desc-ext-2 img {
+#desc-3 .desc-ext #desc-ext-2 img, #desc-3 .desc-ext #desc-ext-2 #pictures #pic-2, #pictures #desc-3 .desc-ext #desc-ext-2 #pic-2, #desc-3 .desc-ext #desc-ext-2 #pictures #pic-3, #pictures #desc-3 .desc-ext #desc-ext-2 #pic-3, #desc-3 .desc-ext #desc-ext-2 #pictures #pic-4, #pictures #desc-3 .desc-ext #desc-ext-2 #pic-4 {
   position: absolute;
   width: 720px;
   height: 600px;
   z-index: 0;
   left: 720px;
+}
+
+#testimony {
+  position: absolute;
+  top: 2700px;
+  z-index: 1;
+}
+
+#testimony img, #testimony #pictures #pic-2, #pictures #testimony #pic-2, #testimony #pictures #pic-3, #pictures #testimony #pic-3, #testimony #pictures #pic-4, #pictures #testimony #pic-4 {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: 130px;
+  margin-bottom: 30px;
+}
+
+#testimony h3 {
+  position: absolute;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  color: #a7abae;
+  letter-spacing: 6px;
+  top: 25px;
+  width: 500px;
+  left: 560px;
+}
+
+#testimony #customer-all {
+  position: absolute;
+  top: 150px;
+}
+
+#testimony #customer-all .customer {
+  position: absolute;
+}
+
+#testimony #customer-all .customer p, #testimony #customer-all .customer p.customer-name, #testimony #customer-all .customer p.customer-position {
+  top: 15px;
+  width: 350px;
+  text-align: center;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #818498;
+}
+
+#testimony #customer-all .customer p.customer-name {
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  font-size: 20px;
+  color: #23303e;
+  margin-bottom: -10px;
+}
+
+#testimony #customer-all .customer p.customer-position {
+  font-weight: 400;
+  color: #a7abae;
+}
+
+#testimony #customer-all #customer-1 {
+  position: inherit;
+  left: 150px;
+}
+
+#testimony #customer-all #customer-2 {
+  position: inherit;
+  left: 560px;
+}
+
+#testimony #customer-all #customer-3 {
+  position: inherit;
+  left: 970px;
+}
+
+#pictures img, #pictures #pic-2, #pictures #pic-3, #pictures #pic-4 {
+  position: absolute;
+  top: 3330px;
+  width: 360px;
+}
+
+#pictures #pic-2 {
+  left: 360px;
+}
+
+#pictures #pic-3 {
+  left: 720px;
+}
+
+#pictures #pic-4 {
+  left: 1080px;
+}
+
+footer {
+  position: absolute;
+  top: 3776px;
+  width: 1440px;
+  text-align: center;
+}
+
+footer h2 {
+  font-family: "Barlow", sans-serif;
+  font-weight: 900;
+  color: #458c7e;
+}
+
+footer a {
+  color: #458c7e;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+footer a svg:hover {
+  fill: white;
 }
 /*# sourceMappingURL=style.css.map */
