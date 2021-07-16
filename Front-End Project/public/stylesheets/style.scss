@@ -38,27 +38,44 @@ html, body{
                     
                     li{
                         list-style: none;
-                        display: inline;
-                        width: 40px;
-                        height: 40px;
-                        margin: 0px 20px 0px 0px;
+                        display: inline-flex;
+                        position: inherit;
+                        width: 110px;
+                        height: 55px;
+                        bottom: 10px;
+                        margin: 10px 10px 0px 0px;
                         // padding-right: 10px;
                         // padding-left: 20px;
-                        text-align: center;
-                        border-radius: 50%;
+                        
+                        border-radius: 20px;
                         font-family: $barlow;
                         font-weight: 400;
                         font-size: 1rem;
                         a{
-                            color: #fff;
-                            &:hover{
-                                color: black;
+                            position: inherit;
+                            span{
+                                position: inherit;
+                                color: #fff;
+                                text-align: center;
+                                padding-left: 25px;
+                                top: 13px;
+                            }
+                            span#span-1{
+                                @extend span;
+                                padding-left: 30px;
+                            }
+                            span#span-2{
+                                @extend span;
+                                right: 4px;
+                            }
+                            span#span-3{
+                                @extend span;
+                                right: 2px;
                             }
                         }
                         &:hover{
-                            background-color: #fff;
+                            background-color: skyblue;
                         }
-
                     }
                 }
             }
@@ -336,12 +353,14 @@ footer{
     top: 3776px;
     width: 1440px;
     text-align: center;
-    // background-color:hsl(168, 34%, 41%);
+    background-color:hsl(168, 58%, 75%);
 
     h2{
         font-family: $barlow;
         font-weight: 900;
-        color: hsl(168, 34%, 41%);
+        color: hsl(166, 38%, 36%);
+        margin-bottom: 40px;
+        margin-top: 60px;
     }
     a{
         color: hsl(168, 34%, 41%);
@@ -352,11 +371,25 @@ footer{
         &:hover{
             color: #fff;
         }
-        svg:hover{
+        path:hover{
             fill: white;
+        }
+        svg{
+           margin-top: 80px;
+           margin-bottom: 20px;
+        }
+        .attr{
+            margin: 0;
+            padding: 0;
+        }
+        span{
+            font-size: 12px;
         }
     }
 }
+
+// Bug unfixed, probably caused by my screen size 
+// that's different from the size the layout supposed to be for
 
 
     
