@@ -74,8 +74,7 @@ app.route("/articles")
 
 app.route("/articles/:articleTitle")
   .get(function(req,res){
-    
-    Wiki.findOne({title : articleTitle}, function(err, result){
+    Wiki.findOne({title : req.params.articleTitle}, function(err, result){
       if(err){
         res.send(err);
       }
